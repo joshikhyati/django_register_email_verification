@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}  
+    <link href="{% static 'assets/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/main.css' %}" rel="stylesheet">
+    
+    <title>documantion</title>
+   </head>
+<body>
+   
+ <section>
+   <nav class="navbar bg">
+     <a href="/" class="navbar-brand">Login</a>
+   </nav>
+ </section>
+ <section class="bg-bg">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6" >
+           <div class="text">
+            <h1>Wel-Come Page</h1>
+            </div>
+            </div>
+            <div class="col-md-6">
+               <div class="card">
+               
+                  <div class="card-title">
+                     <h1>Login Here</h1>
+                  </div>
+                  <div class="card-body">
+                     <form class="form" method="POST" action="{% url 'registerform' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label>Uname</label><br>
+                        <input type="text" class="form-control" name="Uname"><br>
+                        <label>email</label><br>
+                        <input type="email" class="form-control" name="email"><br>
+                        <label>gender</label><br>
+                        <input type="text" class="form-control" name="gender"><br>
+                        <label>age</label><br>
+                        <input type="number" class="form-control" name="age"><br>
+                        <label>mobileno</label><br>
+                        <input type="number" class="form-control" name=" mobileno"><br>
+                        <label>Password</label><br>
+                        <input type="password" class="form-control" name="password"><br><br>
+                        <label>ConfirmPassword</label><br>
+                        <input type="password" class="form-control" name="confirmpassword"><br><br>
+                        
+                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="login">
+                    
+                     </form>
+                     <!-- <div class="">
+                        {% for message in messages %}
+                        <span> {{message}}</span>
+                        {% endfor %}
+                    </div> -->
+                     <!-- <p>Already a member?<a href="{% url 'loginform' %}">Login Here</a> </p> -->
+                  </div>
+               </div>
+            </div>
+           </div>
+         </div>
+ </section>
+</body>
+</html>
