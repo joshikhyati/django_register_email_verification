@@ -78,6 +78,9 @@ Start a project by the following command –
 
 ![alt tag](https://user-images.githubusercontent.com/93461145/189062996-cb2313f2-1544-44f8-85d4-76cec5327435.png)
 
+
+## Lets start Project 
+
 <h4>Now let make a models in <b>"models.py"</b></h4>
 
 This file we create model name register1 with Uname.Email,Gender,Age,Mobileno,password,is_verified,and Token feilds
@@ -117,3 +120,13 @@ admin.site.register(register1, register1Admin)
 
 <h5>python manage.py makemigrations</h5>
 <h5>python manage.py migrate</h5>
+
+Now create superuser with folling commandline
+
+```commandline
+ python manage.py createsuperuser
+ ```
+ Than "Superuser" username, emailid, password to login in Admin 
+ 
+ <h3>Edit urls.py file in project :</h3>  
+ 
