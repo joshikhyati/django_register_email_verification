@@ -50,7 +50,7 @@ Start a project by the following command –
    python manage.py startapp django_app
 ```
 
-```commandline
+
 <h4>Goto django_app/ folder and create a folder templates with files index.html, login.html,register.html,success.html files.</h4>
-```
+
     
