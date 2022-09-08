@@ -146,3 +146,129 @@ urlpatterns = [
 
 ```
 
+ <h2>Edit "views.py" file in django_app :</h2>
+ 
+<h5>Signup or Register form  code </h5>
+ 
+ ```python
+ 
+from django.shortcuts import render,HttpResponse
+from .models import register1
+from django.contrib import messages
+import uuid
+
+
+def registerform(request):
+    if request.method=="POST":
+        Uname=request.POST['Uname']
+        email=request.POST['email']
+        gender=request.POST['gender']
+        age=request.POST['age']
+        mobileno=request.POST['mobileno']
+        password=request.POST['password']
+        confirmpassword=request.POST['confirmpassword']
+        token=str(uuid.uuid4())
+        
+
+        if password==confirmpassword:
+            if register1.objects.filter(Uname=Uname).exists():
+                messages.error(request,'Username already exists')
+            elif register1.objects.filter(email=email).exists():
+                messages.error(request,'email already exists')
+            else:
+                user=register1.objects.create(Uname=Uname,email=email,gender=gender,age=age,mobileno=mobileno,password=password,token=token)
+                user.save()
+                 else:
+            messages.error(request,'both password are not matching')
+
+    else:
+        return render(request,'register.html')
+ ```
+
+<h4>Register.html</h4>
+ Make a form of signup this containe username,email,gender,age,mobileno,password feilds and submit button
+ 
+ ```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}  
+    <link href="{% static 'assets/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/main.css' %}" rel="stylesheet">
+    
+    <title>documantion</title>
+   </head>
+<body>
+   
+ <section>
+   <nav class="navbar bg">
+     <a href="/" class="navbar-brand">Login</a>
+   </nav>
+ </section>
+ <section class="bg-bg">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6" >
+           <div class="text">
+            <h1>Wel-Come Page</h1>
+            </div>
+            </div>
+            <div class="col-md-6">
+               <div class="card">
+               
+                  <div class="card-title">
+                     <h1>Login Here</h1>
+                  </div>
+                  <div class="card-body">
+                     <form class="form" method="POST" action="{% url 'registerform' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label>User name</label><br>
+                        <input type="text" class="form-control" name="Uname"><br>
+                        <label>Email</label><br>
+                        <input type="email" class="form-control" name="email"><br>
+                        <label>Gender</label><br>
+                        <input type="text" class="form-control" name="gender"><br>
+                        <label>Age</label><br>
+                        <input type="number" class="form-control" name="age"><br>
+                        <label>Mobileno</label><br>
+                        <input type="number" class="form-control" name=" mobileno"><br>
+                        <label>Password</label><br>
+                        <input type="password" class="form-control" name="password"><br><br>
+                        <label>ConfirmPassword</label><br>
+                        <input type="password" class="form-control" name="confirmpassword"><br><br>
+                        
+                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                    
+                     </form>
+                  </div>
+               </div>
+            </div>
+           </div>
+         </div>
+ </section>
+</body>
+</html>
+```
+
+<h3>mail sending</h3>
+
+```python
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.auth import authenticate
+                domain_name=get_current_site(request).domain
+                link=f'http://{domain_name}/verify/{token}',
+                send_mail(
+                        'Email Verification',
+                        f'please click{link}to verify your email',
+                        settings.EMAIL_HOST_USER,
+                        [email],
+                        fail_silently=False,
+                        )
+                return HttpResponse('email send')
+```
