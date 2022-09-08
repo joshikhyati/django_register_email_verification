@@ -323,7 +323,7 @@ urlpatterns = [
 
 After successfully verify mail or token redirect at "success.html" 
 <h2>Success.html</h2>
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
