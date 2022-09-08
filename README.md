@@ -18,3 +18,39 @@ Start a project by the following command –
 ```commandline
  django-admin startproject django_project
  ```
+ Change directory to project –
+ 
+ ```commandline
+  cd django_project
+ ```
+ 
+ Now,Start server by the following command
+ 
+ ```commandline
+   python manage.py runserver
+  ```
+  
+  After running above command you get following url 
+  
+  ```commandline
+    http://127.0.0.1:8000/ as URL.
+    ```
+    
+   Click on URL link to  check whether the server is running or not.
+   
+   To stop server by pressing
+   
+   ```commandline
+      ctrl-c
+ ```
+ 
+ Let’s create an app now called the “django_app”. 
+ 
+ ```commandline
+   python manage.py startapp django_app
+```
+
+```commandline
+<h4>Goto django_app/ folder and create a folder templates with files index.html, login.html,register.html,success.html files.</h4>
+```
+    
