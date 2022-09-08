@@ -85,7 +85,7 @@ Start a project by the following command –
 
 This file we create model name register1 with Uname.Email,Gender,Age,Mobileno,password,is_verified,and Token feilds
 
-```commandline
+```python
  from django.db import models
 
 class register1(models.Model):
@@ -105,7 +105,7 @@ def __str__(self):
 Now display a model in adminpanel we write code in "Admin.py"
 
 
-```commandline
+```python
 
 from django.contrib import admin
 from .models import register1
@@ -128,5 +128,21 @@ Now create superuser with folling commandline
  ```
  Than "Superuser" username, emailid, password to login in Admin 
  
- <h3>Edit urls.py file in project :</h3>  
+ <h2>Edit "urls.py" file in project :</h2>  
  
+ <hr>
+ 
+ "urls.py\django_project
+ 
+ ```python
+ 
+ from django.contrib import admin
+from django.urls import path,include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('django_app.urls')),
+]
+
+```
+
