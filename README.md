@@ -53,4 +53,12 @@ Start a project by the following command –
 
 <h4>Goto django_app/ folder and create a folder templates with files index.html, login.html,register.html,success.html files.</h4>
 
-    
+
+<h4>Goto django_app/ folder and create a folder Static with another folder assets in it bootstrap.min.css and main.css files.</h4>
+
+
+## Settings parameters
+
+
+    ![image](https://user-images.githubusercontent.com/93461145/189056522-4179d4cd-8ca9-43d9-b89a-ee8dcecafa78.png)
+
