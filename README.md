@@ -59,5 +59,18 @@ Start a project by the following command –
 
 ## Settings parameters
 
+<h5> settings.py </h5>
+
+
+<h5>configure email settings in setting.py:</h5>
+
 ![alt tag](https://user-images.githubusercontent.com/93461145/189059671-2f93c5df-39e6-45ae-8c11-49c101934b9c.png)
+
+<h5> setting for templates folder</h5>
+
+![alt tag](https://user-images.githubusercontent.com/93461145/189061313-ff4ea5e9-0e39-4cb7-9365-034484d682c2.png)
+
+<h5> setting for static folder to use css,js file in project</h5>
+
+![alt tag](https://user-images.githubusercontent.com/93461145/189061799-ef256ac8-9e49-4a90-a614-dc037e62152c.png)
 
