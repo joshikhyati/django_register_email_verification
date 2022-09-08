@@ -59,5 +59,6 @@ Start a project by the following command –
 
 ## Settings parameters
 
-<img src="189056522-4179d4cd-8ca9-43d9-b89a-ee8dcecafa78.png" width="350" title="hover text">
+![alt tag](https://user-images.githubusercontent.com/93461145/189058908-cccaa090-ff83-4e9e-9846-68fb62ed40b9.png)
+
 
