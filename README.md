@@ -74,3 +74,26 @@ Start a project by the following command –
 
 ![alt tag](https://user-images.githubusercontent.com/93461145/189061799-ef256ac8-9e49-4a90-a614-dc037e62152c.png)
 
+<h5>place your email and password here.</h5>
+
+![alt tag](https://user-images.githubusercontent.com/93461145/189062996-cb2313f2-1544-44f8-85d4-76cec5327435.png)
+
+<h4>Now let make a models in <b>"models.py"</b></h4>
+
+```commandline
+ from django.db import models
+
+class register1(models.Model):
+    Uname=models.CharField(max_length=100)
+    email=models.CharField(max_length=150)
+    gender=models.CharField(max_length=10)
+    age=models.IntegerField()
+    mobileno=models.IntegerField()
+    password=models.CharField(max_length=20)
+    is_verified=models.BooleanField(default=False)
+    token=models.CharField(max_length=100,default=None)
+
+def __str__(self):
+        
+    return self.Uname 
+```
