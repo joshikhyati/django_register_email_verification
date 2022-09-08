@@ -59,6 +59,5 @@ Start a project by the following command –
 
 ## Settings parameters
 
-![alt tag](https://user-images.githubusercontent.com/93461145/189059166-a4b5fa1c-7f5f-4555-82d4-4a09b65ada39.png)
-
+![alt tag](https://user-images.githubusercontent.com/93461145/189059671-2f93c5df-39e6-45ae-8c11-49c101934b9c.png)
 
