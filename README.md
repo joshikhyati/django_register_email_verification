@@ -254,7 +254,10 @@ def registerform(request):
 </html>
 ```
 
-<h3>mail sending</h3>
+<h3>Mail sending</h3>
+<hr>
+
+Mail sending code in send mail subject, mailbody(link with token number),from emailid,to email.
 
 ```python
 from django.contrib.sites.shortcuts import get_current_site
@@ -272,3 +275,32 @@ from django.contrib.auth import authenticate
                         )
                 return HttpResponse('email send')
 ```
+
+<h2>Verify Mail</h2>
+
+verify function verify mail with following code in "views.py"
+
+```python
+def verify(request,token):
+    
+    try:
+        user=register1.objects.filter(token=token).first()
+        if user:
+            user.is_verified=True
+            user.save()
+            msg='your email has been verified'
+            return render(request,'success.html',{'msg':msg})
+        else:
+            user.is_verified=False
+            msg = 'Your acccount not verified'
+            return render(request,'success.html',{'msg':msg})
+    except Exception as e:
+            msg=e
+            return render(request,'success.html',{'msg':e})
+            
+def success(request):
+   
+    return render(request,'success.html')
+```
+
+<h4>Now lets create
