@@ -303,4 +303,39 @@ def success(request):
     return render(request,'success.html')
 ```
 
-<h4>Now lets create
+<h4>Now lets create "urls.py" in django_app </h4>
+
+Mapping of views function or we can also say path of url 
+
+```python
+from unicodedata import name
+from django.urls import path
+from.import views
+
+urlpatterns = [
+    path('',views.index,name='index'),
+    path('registerform',views.registerform,name='registerform'),
+    path('success/', views.success, name="success"),
+    path('login/', views.login, name="login"),
+    path('verify/<str:token>',views.verify),
+]
+```
+
+After successfully verify mail or token redirect at "success.html" 
+<h2>Success.html</h2>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h3>
+    {{msg}}<a href="{% url 'loginform' %}">Click Here</a>to Login your Account
+   </h3> 
+</body>
+</html>
+```
