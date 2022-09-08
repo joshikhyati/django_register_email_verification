@@ -80,6 +80,8 @@ Start a project by the following command –
 
 <h4>Now let make a models in <b>"models.py"</b></h4>
 
+This file we create model name register1 with Uname.Email,Gender,Age,Mobileno,password,is_verified,and Token feilds
+
 ```commandline
  from django.db import models
 
@@ -97,3 +99,21 @@ def __str__(self):
         
     return self.Uname 
 ```
+Now display a model in adminpanel we write code in "Admin.py"
+
+
+```commandline
+
+from django.contrib import admin
+from .models import register1
+
+
+class register1Admin(admin.ModelAdmin):
+    list_display = ('Uname', 'email','gender' ,'age','mobileno','password','is_verified','token')
+admin.site.register(register1, register1Admin)
+```
+
+<h3>Make migrations and migrate them. </h3>
+
+<h5>python manage.py makemigrations</h5>
+<h5>python manage.py migrate</h5>
