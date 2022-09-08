@@ -339,3 +339,8 @@ After successfully verify mail or token redirect at "success.html"
 </body>
 </html>
 ```
+<h2>Now you can run the server to see your app.</h2>
+
+```commandline
+python manage.py runserver
+```
